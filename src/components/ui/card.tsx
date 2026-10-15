@@ -8,20 +8,17 @@ import { cn } from "@/lib/utils";
 export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("rounded-md border border-line bg-surface", className)}
+      className={cn("border-line bg-surface rounded-md border", className)}
       {...props}
     />
   );
 }
 
-export function CardHeader({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) {
+export function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        "flex items-center justify-between gap-3 border-b border-line px-4 py-3",
+        "border-line flex items-center justify-between gap-3 border-b px-4 py-3",
         className,
       )}
       {...props}
@@ -29,15 +26,9 @@ export function CardHeader({
   );
 }
 
-export function CardTitle({
-  className,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) {
+export function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3
-      className={cn("text-[15px] tracking-tight text-text", className)}
-      {...props}
-    />
+    <h3 className={cn("text-text text-[15px] tracking-tight", className)} {...props} />
   );
 }
 
@@ -45,14 +36,6 @@ export function CardBody({ className, ...props }: HTMLAttributes<HTMLDivElement>
   return <div className={cn("p-4", className)} {...props} />;
 }
 
-export function CardFooter({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn("border-t border-line px-4 py-3", className)}
-      {...props}
-    />
-  );
+export function CardFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("border-line border-t px-4 py-3", className)} {...props} />;
 }

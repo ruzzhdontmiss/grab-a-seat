@@ -4,4 +4,5 @@ pnpm-lock.yaml
 drizzle
 public
 *.md
+teams.json
 .env*

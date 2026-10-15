@@ -28,15 +28,12 @@ export function Ticker({ items }: { items: TickerItem[] }) {
   const sequence = [...items, ...items];
 
   return (
-    <div
-      className="ticker-viewport border-b border-line bg-surface"
-      aria-hidden
-    >
+    <div className="ticker-viewport border-line bg-surface border-b" aria-hidden>
       <div className="ticker-track">
         {sequence.map((item, index) => (
           <span
             key={`${item.id}-${index}`}
-            className="flex items-center gap-2 whitespace-nowrap border-r border-line-soft px-4 py-1.5 font-mono text-[11px] text-text-dim tabular-nums"
+            className="border-line-soft text-text-dim flex items-center gap-2 border-r px-4 py-1.5 font-mono text-[11px] whitespace-nowrap tabular-nums"
           >
             <span className={TONE[item.direction ?? "flat"]}>
               {ARROW[item.direction ?? "flat"]}

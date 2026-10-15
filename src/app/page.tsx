@@ -1,10 +1,4 @@
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Bell,
-  Search,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Bell, Search, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
@@ -109,17 +103,17 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* Hero ---------------------------------------------------------------- */}
-      <section className="border-b border-line pb-12">
+      <section className="border-line border-b pb-12">
         <p className="label">NFL · NBA · all-in pricing</p>
         <h1 className="mt-4 max-w-3xl text-5xl sm:text-6xl">
           Every seat. Every price.
           <br />
           One board.
         </h1>
-        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-text-dim">
-          We watch SeatGeek, Ticketmaster, StubHub and the rest — then show you
-          the cheapest all-in price per game. Set a number. We tell you the
-          moment it clears.
+        <p className="text-text-dim mt-5 max-w-xl text-[15px] leading-relaxed">
+          We watch SeatGeek, Ticketmaster, StubHub and the rest — then show you the
+          cheapest all-in price per game. Set a number. We tell you the moment it
+          clears.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <Link href="/register" className={buttonVariants({ size: "lg" })}>
@@ -137,16 +131,14 @@ export default function HomePage() {
 
       {/* Stat strip ---------------------------------------------------------- */}
       <section>
-        <dl className="grid grid-cols-2 border border-line md:grid-cols-4">
+        <dl className="border-line grid grid-cols-2 border md:grid-cols-4">
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="border-r border-b border-line px-5 py-5 last:border-r-0 md:border-b-0"
+              className="border-line border-r border-b px-5 py-5 last:border-r-0 md:border-b-0"
             >
               <dt className="label">{stat.label}</dt>
-              <dd className="mt-2 font-mono text-2xl tabular-nums">
-                {stat.value}
-              </dd>
+              <dd className="mt-2 font-mono text-2xl tabular-nums">{stat.value}</dd>
             </div>
           ))}
         </dl>
@@ -154,12 +146,12 @@ export default function HomePage() {
 
       {/* Sample drops table -------------------------------------------------- */}
       <section>
-        <div className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b border-line pb-3">
+        <div className="border-line mb-4 flex flex-wrap items-end justify-between gap-3 border-b pb-3">
           <h2 className="text-2xl">Biggest drops right now</h2>
           <span className="label">last 24h · est. all-in</span>
         </div>
 
-        <div className="overflow-x-auto border border-line bg-surface">
+        <div className="border-line bg-surface overflow-x-auto border">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent">
@@ -175,41 +167,29 @@ export default function HomePage() {
             </TableHeader>
             <TableBody>
               {DROPS.map((row) => {
-                const pct = Math.round(
-                  ((row.allIn - row.prev) / row.prev) * 100,
-                );
+                const pct = Math.round(((row.allIn - row.prev) / row.prev) * 100);
                 return (
                   <TableRow key={row.id}>
                     <TableCell>
                       <div className="flex items-center gap-2.5">
-                        <TeamMonogram
-                          abbr={row.away.abbr}
-                          colors={row.away.colors}
-                        />
-                        <span className="font-mono text-[12px] text-text-dim">
-                          @
-                        </span>
-                        <TeamMonogram
-                          abbr={row.home.abbr}
-                          colors={row.home.colors}
-                        />
-                        <span className="ml-1 font-display text-[15px] tracking-tight">
+                        <TeamMonogram abbr={row.away.abbr} colors={row.away.colors} />
+                        <span className="text-text-dim font-mono text-[12px]">@</span>
+                        <TeamMonogram abbr={row.home.abbr} colors={row.home.colors} />
+                        <span className="font-display ml-1 text-[15px] tracking-tight">
                           {row.away.abbr}–{row.home.abbr}
                         </span>
                         <Badge variant="outline">{row.league}</Badge>
                       </div>
                     </TableCell>
-                    <TableCell className="hidden text-text-dim sm:table-cell">
+                    <TableCell className="text-text-dim hidden sm:table-cell">
                       {row.venue}
                     </TableCell>
                     <TableCell numeric>
                       {formatCents(row.allIn)}
-                      {row.est && (
-                        <span className="ml-1 text-text-dim">est.</span>
-                      )}
+                      {row.est && <span className="text-text-dim ml-1">est.</span>}
                     </TableCell>
                     <TableCell numeric className="hidden sm:table-cell">
-                      <span className="inline-flex items-center justify-end gap-1 text-volt">
+                      <span className="text-volt inline-flex items-center justify-end gap-1">
                         <ArrowDownRight size={13} />
                         {pct}%
                       </span>
@@ -235,21 +215,19 @@ export default function HomePage() {
           </Table>
         </div>
 
-        <p className="mt-3 flex items-center gap-2 text-[12px] text-text-dim">
+        <p className="text-text-dim mt-3 flex items-center gap-2 text-[12px]">
           <ShieldCheck size={14} className="text-volt" />
-          Estimates marked <span className="text-text">“est.”</span> — all-in
-          totals, fees included, per FTC junk-fee guidance.
+          Estimates marked <span className="text-text">“est.”</span> — all-in totals,
+          fees included, per FTC junk-fee guidance.
         </p>
       </section>
 
       {/* Design tokens ------------------------------------------------------- */}
-      <section className="border-t border-line pt-10">
+      <section className="border-line border-t pt-10">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
             <h2 className="text-2xl">Design tokens</h2>
-            <p className="label mt-2">
-              roadmap §4 — volt is the only accent
-            </p>
+            <p className="label mt-2">roadmap §4 — volt is the only accent</p>
           </div>
           <span className="label">dark-first · borders not shadows</span>
         </div>
@@ -262,17 +240,17 @@ export default function HomePage() {
               <span className="label">CSS vars</span>
             </CardHeader>
             <CardBody>
-              <ul className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2">
+              <ul className="bg-line grid grid-cols-1 gap-px sm:grid-cols-2">
                 {TOKENS.map((token) => (
                   <li
                     key={token.name}
-                    className="flex items-center gap-3 bg-surface px-3 py-2"
+                    className="bg-surface flex items-center gap-3 px-3 py-2"
                   >
                     <span
-                      className="h-5 w-5 shrink-0 rounded-[3px] border border-line"
+                      className="border-line h-5 w-5 shrink-0 rounded-[3px] border"
                       style={{ background: token.hex }}
                     />
-                    <span className="font-mono text-[11px] text-text-dim">
+                    <span className="text-text-dim font-mono text-[11px]">
                       {token.name}
                     </span>
                     <span className="ml-auto font-mono text-[11px] tabular-nums">
@@ -299,9 +277,9 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="label mb-2">Archivo · 400/500</p>
-                <p className="text-[15px] text-text-dim">
-                  Body and UI text stays plain and readable at 14–15px. No
-                  marketing fluff, no emoji.
+                <p className="text-text-dim text-[15px]">
+                  Body and UI text stays plain and readable at 14–15px. No marketing
+                  fluff, no emoji.
                 </p>
               </div>
               <div>
@@ -336,7 +314,7 @@ export default function HomePage() {
                   Alert me
                 </Button>
               </div>
-              <div className="flex flex-wrap items-center gap-2 border-t border-line-soft pt-4">
+              <div className="border-line-soft flex flex-wrap items-center gap-2 border-t pt-4">
                 <Badge variant="volt">Best deal</Badge>
                 <Badge variant="amber">Rising</Badge>
                 <Badge variant="red">Sold out</Badge>

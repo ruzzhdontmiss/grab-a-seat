@@ -18,7 +18,7 @@ export function TeamMonogram({
     <span
       aria-hidden
       className={cn(
-        "inline-flex h-5 min-w-[24px] items-center justify-center rounded-[3px] border border-line px-1 font-mono text-[10px] font-medium leading-none",
+        "border-line inline-flex h-5 min-w-[24px] items-center justify-center rounded-[3px] border px-1 font-mono text-[10px] leading-none font-medium",
         className,
       )}
       style={{

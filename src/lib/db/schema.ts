@@ -32,7 +32,9 @@ export const users = pgTable("users", {
     .$onUpdate(() => new Date())
     .notNull(),
   /** Domain field (roadmap §6): "free" | "premium". */
-  plan: text("plan", { enum: ["free", "premium"] }).default("free").notNull(),
+  plan: text("plan", { enum: ["free", "premium"] })
+    .default("free")
+    .notNull(),
 });
 
 export const sessions = pgTable(
@@ -166,9 +168,7 @@ export const follows = pgTable(
       .references(() => teams.id, { onDelete: "cascade" }),
     createdAt: timestamp("created_at").defaultNow().notNull(),
   },
-  (table) => [
-    uniqueIndex("follows_user_team_uq").on(table.userId, table.teamId),
-  ],
+  (table) => [uniqueIndex("follows_user_team_uq").on(table.userId, table.teamId)],
 );
 
 export const trackedGames = pgTable(
@@ -228,9 +228,7 @@ export const alertEvents = pgTable(
     sentAt: timestamp("sent_at"),
     dedupeKey: text("dedupe_key").notNull(),
   },
-  (table) => [
-    uniqueIndex("alert_events_dedupe_key_uq").on(table.dedupeKey),
-  ],
+  (table) => [uniqueIndex("alert_events_dedupe_key_uq").on(table.dedupeKey)],
 );
 
 export const pushSubs = pgTable("push_subs", {

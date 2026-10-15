@@ -62,12 +62,7 @@ const VENUES: Record<string, { name: string; city: string }> = {
 };
 
 const INVENTORY_PROVIDERS = ["seatgeek", "ticketmaster"] as const;
-const DEEPLINK_PROVIDERS = [
-  "stubhub",
-  "vividseats",
-  "tickpick",
-  "gametime",
-] as const;
+const DEEPLINK_PROVIDERS = ["stubhub", "vividseats", "tickpick", "gametime"] as const;
 
 /* ── deterministic PRNG ──────────────────────────────────────────────────── */
 
@@ -109,9 +104,7 @@ function roundPairs<T>(teams: readonly T[], round: number): Array<[T, T]> {
 
 function startOfTodayUtc(): Date {
   const now = new Date();
-  return new Date(
-    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()),
-  );
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 }
 
 /* ── main ────────────────────────────────────────────────────────────────── */

@@ -11,8 +11,7 @@ const base =
 const variants: Record<Variant, string> = {
   // Primary buttons: volt bg, ink text (§4).
   primary: "border-volt bg-volt text-ink hover:border-volt-press hover:bg-volt-press",
-  secondary:
-    "border-line bg-surface-2 text-text hover:border-volt/60 hover:text-volt",
+  secondary: "border-line bg-surface-2 text-text hover:border-volt/60 hover:text-volt",
   ghost:
     "border-transparent bg-transparent text-text-dim hover:bg-surface-2 hover:text-text",
   danger: "border-red/60 bg-transparent text-red hover:bg-red hover:text-ink",

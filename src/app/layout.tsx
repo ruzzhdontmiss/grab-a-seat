@@ -56,7 +56,7 @@ export default function RootLayout({
       lang="en"
       className={`${archivo.variable} ${barlowCondensed.variable} ${jetBrainsMono.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-ink text-text antialiased">
+      <body className="bg-ink text-text flex min-h-screen flex-col antialiased">
         <Ticker items={TICKER_ITEMS} />
         <SiteHeader />
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">

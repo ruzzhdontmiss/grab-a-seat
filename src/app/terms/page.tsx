@@ -7,13 +7,12 @@ export default function TermsPage() {
     <article className="mx-auto max-w-2xl space-y-6">
       <p className="label">Terms</p>
       <h1 className="text-4xl">Terms of use</h1>
-      <p className="text-[15px] leading-relaxed text-text-dim">
-        FanTicket Hub provides price comparison and alerting only. We do not
-        sell tickets and are not a party to any purchase you make with a
-        marketplace. Prices and availability are provided “as is” and may be out
-        of date.
+      <p className="text-text-dim text-[15px] leading-relaxed">
+        FanTicket Hub provides price comparison and alerting only. We do not sell
+        tickets and are not a party to any purchase you make with a marketplace. Prices
+        and availability are provided “as is” and may be out of date.
       </p>
-      <p className="text-[13px] leading-relaxed text-text-dim">
+      <p className="text-text-dim text-[13px] leading-relaxed">
         Draft copy — the full terms are finalized before launch.
       </p>
     </article>

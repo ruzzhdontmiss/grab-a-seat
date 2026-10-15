@@ -49,7 +49,7 @@ export default async function AlertsPage() {
         </CardBody>
       </Card>
 
-      <p className="max-w-xl text-[13px] text-text-dim">
+      <p className="text-text-dim max-w-xl text-[13px]">
         Tracked games, team follows and the alert history feed arrive in Phase 1.
       </p>
     </div>
@@ -58,7 +58,7 @@ export default async function AlertsPage() {
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between gap-6 border-b border-line-soft pb-2 last:border-0 last:pb-0">
+    <div className="border-line-soft flex items-center justify-between gap-6 border-b pb-2 last:border-0 last:pb-0">
       <span className="label">{label}</span>
       <span className="text-text">{value}</span>
     </div>

@@ -7,17 +7,17 @@ export default function DisclosurePage() {
     <article className="mx-auto max-w-2xl space-y-6">
       <p className="label">FTC disclosure</p>
       <h1 className="text-4xl">Affiliate disclosure</h1>
-      <p className="text-[15px] leading-relaxed text-text-dim">
-        FanTicket Hub is a comparison service, not a ticket seller. When you
-        click through to a partner marketplace and complete a purchase, we may
-        earn a commission. This never changes the price you pay.
+      <p className="text-text-dim text-[15px] leading-relaxed">
+        FanTicket Hub is a comparison service, not a ticket seller. When you click
+        through to a partner marketplace and complete a purchase, we may earn a
+        commission. This never changes the price you pay.
       </p>
-      <p className="text-[15px] leading-relaxed text-text-dim">
-        Prices are all-in estimates where marked “est.” and are updated on a
-        schedule. Ticket prices move constantly — always confirm the final total
-        on the partner site before purchase.
+      <p className="text-text-dim text-[15px] leading-relaxed">
+        Prices are all-in estimates where marked “est.” and are updated on a schedule.
+        Ticket prices move constantly — always confirm the final total on the partner
+        site before purchase.
       </p>
-      <p className="text-[15px] leading-relaxed text-text-dim">
+      <p className="text-text-dim text-[15px] leading-relaxed">
         Not affiliated with the NFL, NBA, or any team.
       </p>
     </article>

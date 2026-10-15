@@ -25,7 +25,12 @@ export const teamsSchema = z.array(teamSchema);
 export type Team = z.infer<typeof teamSchema>;
 
 /** Slug used for the combined "away-at-home" game slug. */
-export function gameSlug(league: string, awaySlug: string, homeSlug: string, startsAt: Date): string {
+export function gameSlug(
+  league: string,
+  awaySlug: string,
+  homeSlug: string,
+  startsAt: Date,
+): string {
   const day = startsAt.toISOString().slice(0, 10);
   return `${league}-${awaySlug}-at-${homeSlug}-${day}`;
 }

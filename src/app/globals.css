@@ -49,10 +49,9 @@
   --radius-3xl: 6px;
 
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-barlow-condensed), ui-sans-serif, system-ui,
-    sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo,
-    monospace;
+  --font-display: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @layer base {
@@ -76,8 +75,7 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-barlow-condensed), ui-sans-serif, system-ui,
-      sans-serif;
+    font-family: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -0.01em;

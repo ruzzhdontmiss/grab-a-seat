@@ -45,10 +45,8 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   return (
     <div className="mx-auto w-full max-w-sm">
       <p className="label">{isSignUp ? "Create account" : "Welcome back"}</p>
-      <h1 className="mt-3 text-3xl">
-        {isSignUp ? "Set your alerts" : "Sign in"}
-      </h1>
-      <p className="mt-2 text-[13px] text-text-dim">
+      <h1 className="mt-3 text-3xl">{isSignUp ? "Set your alerts" : "Sign in"}</h1>
+      <p className="text-text-dim mt-2 text-[13px]">
         {isSignUp
           ? "Follow teams and track prices. No spam, no resale."
           : "Track prices and manage the teams you follow."}
@@ -112,7 +110,7 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
         {error && (
           <p
             role="alert"
-            className="rounded-md border border-red/40 bg-red/10 px-3 py-2 text-[12px] text-red"
+            className="border-red/40 bg-red/10 text-red rounded-md border px-3 py-2 text-[12px]"
           >
             {error}
           </p>
@@ -123,11 +121,11 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
         </Button>
       </form>
 
-      <p className="mt-6 text-[13px] text-text-dim">
+      <p className="text-text-dim mt-6 text-[13px]">
         {isSignUp ? "Already have an account? " : "New here? "}
         <Link
           href={isSignUp ? "/login" : "/register"}
-          className="text-volt transition-colors duration-150 hover:text-volt-press"
+          className="text-volt hover:text-volt-press transition-colors duration-150"
         >
           {isSignUp ? "Sign in" : "Create one"}
         </Link>
