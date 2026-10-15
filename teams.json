@@ -1,0 +1,932 @@
+[
+    {
+        "slug": "arizona-cardinals",
+        "league": "nfl",
+        "city": "Arizona",
+        "name": "Cardinals",
+        "abbr": "ARI",
+        "conference": "NFC",
+        "division": "West",
+        "colors": {
+            "primary": "#97233F",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "arizona-cardinals",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "atlanta-falcons",
+        "league": "nfl",
+        "city": "Atlanta",
+        "name": "Falcons",
+        "abbr": "ATL",
+        "conference": "NFC",
+        "division": "South",
+        "colors": {
+            "primary": "#A71930",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "atlanta-falcons",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "baltimore-ravens",
+        "league": "nfl",
+        "city": "Baltimore",
+        "name": "Ravens",
+        "abbr": "BAL",
+        "conference": "AFC",
+        "division": "North",
+        "colors": {
+            "primary": "#241773",
+            "secondary": "#9E7C0C"
+        },
+        "seatgeekSlug": "baltimore-ravens",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "buffalo-bills",
+        "league": "nfl",
+        "city": "Buffalo",
+        "name": "Bills",
+        "abbr": "BUF",
+        "conference": "AFC",
+        "division": "East",
+        "colors": {
+            "primary": "#00338D",
+            "secondary": "#C60C30"
+        },
+        "seatgeekSlug": "buffalo-bills",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "carolina-panthers",
+        "league": "nfl",
+        "city": "Carolina",
+        "name": "Panthers",
+        "abbr": "CAR",
+        "conference": "NFC",
+        "division": "South",
+        "colors": {
+            "primary": "#0085CA",
+            "secondary": "#101820"
+        },
+        "seatgeekSlug": "carolina-panthers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "chicago-bears",
+        "league": "nfl",
+        "city": "Chicago",
+        "name": "Bears",
+        "abbr": "CHI",
+        "conference": "NFC",
+        "division": "North",
+        "colors": {
+            "primary": "#0B162A",
+            "secondary": "#C83803"
+        },
+        "seatgeekSlug": "chicago-bears",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "cincinnati-bengals",
+        "league": "nfl",
+        "city": "Cincinnati",
+        "name": "Bengals",
+        "abbr": "CIN",
+        "conference": "AFC",
+        "division": "North",
+        "colors": {
+            "primary": "#FB4F14",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "cincinnati-bengals",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "cleveland-browns",
+        "league": "nfl",
+        "city": "Cleveland",
+        "name": "Browns",
+        "abbr": "CLE",
+        "conference": "AFC",
+        "division": "North",
+        "colors": {
+            "primary": "#311D00",
+            "secondary": "#FF3C00"
+        },
+        "seatgeekSlug": "cleveland-browns",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "dallas-cowboys",
+        "league": "nfl",
+        "city": "Dallas",
+        "name": "Cowboys",
+        "abbr": "DAL",
+        "conference": "NFC",
+        "division": "East",
+        "colors": {
+            "primary": "#041E42",
+            "secondary": "#869397"
+        },
+        "seatgeekSlug": "dallas-cowboys",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "denver-broncos",
+        "league": "nfl",
+        "city": "Denver",
+        "name": "Broncos",
+        "abbr": "DEN",
+        "conference": "AFC",
+        "division": "West",
+        "colors": {
+            "primary": "#FB4F14",
+            "secondary": "#002244"
+        },
+        "seatgeekSlug": "denver-broncos",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "detroit-lions",
+        "league": "nfl",
+        "city": "Detroit",
+        "name": "Lions",
+        "abbr": "DET",
+        "conference": "NFC",
+        "division": "North",
+        "colors": {
+            "primary": "#0076B6",
+            "secondary": "#B0B7BC"
+        },
+        "seatgeekSlug": "detroit-lions",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "green-bay-packers",
+        "league": "nfl",
+        "city": "Green Bay",
+        "name": "Packers",
+        "abbr": "GB",
+        "conference": "NFC",
+        "division": "North",
+        "colors": {
+            "primary": "#203731",
+            "secondary": "#FFB612"
+        },
+        "seatgeekSlug": "green-bay-packers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "houston-texans",
+        "league": "nfl",
+        "city": "Houston",
+        "name": "Texans",
+        "abbr": "HOU",
+        "conference": "AFC",
+        "division": "South",
+        "colors": {
+            "primary": "#03202F",
+            "secondary": "#A71930"
+        },
+        "seatgeekSlug": "houston-texans",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "indianapolis-colts",
+        "league": "nfl",
+        "city": "Indianapolis",
+        "name": "Colts",
+        "abbr": "IND",
+        "conference": "AFC",
+        "division": "South",
+        "colors": {
+            "primary": "#002C5F",
+            "secondary": "#FFFFFF"
+        },
+        "seatgeekSlug": "indianapolis-colts",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "jacksonville-jaguars",
+        "league": "nfl",
+        "city": "Jacksonville",
+        "name": "Jaguars",
+        "abbr": "JAX",
+        "conference": "AFC",
+        "division": "South",
+        "colors": {
+            "primary": "#101820",
+            "secondary": "#006778"
+        },
+        "seatgeekSlug": "jacksonville-jaguars",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "kansas-city-chiefs",
+        "league": "nfl",
+        "city": "Kansas City",
+        "name": "Chiefs",
+        "abbr": "KC",
+        "conference": "AFC",
+        "division": "West",
+        "colors": {
+            "primary": "#E31837",
+            "secondary": "#FFB81C"
+        },
+        "seatgeekSlug": "kansas-city-chiefs",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "las-vegas-raiders",
+        "league": "nfl",
+        "city": "Las Vegas",
+        "name": "Raiders",
+        "abbr": "LV",
+        "conference": "AFC",
+        "division": "West",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#A5ACAF"
+        },
+        "seatgeekSlug": "las-vegas-raiders",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "los-angeles-chargers",
+        "league": "nfl",
+        "city": "Los Angeles",
+        "name": "Chargers",
+        "abbr": "LAC",
+        "conference": "AFC",
+        "division": "West",
+        "colors": {
+            "primary": "#0080C6",
+            "secondary": "#FFC20E"
+        },
+        "seatgeekSlug": "los-angeles-chargers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "los-angeles-rams",
+        "league": "nfl",
+        "city": "Los Angeles",
+        "name": "Rams",
+        "abbr": "LAR",
+        "conference": "NFC",
+        "division": "West",
+        "colors": {
+            "primary": "#003594",
+            "secondary": "#FFA300"
+        },
+        "seatgeekSlug": "los-angeles-rams",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "miami-dolphins",
+        "league": "nfl",
+        "city": "Miami",
+        "name": "Dolphins",
+        "abbr": "MIA",
+        "conference": "AFC",
+        "division": "East",
+        "colors": {
+            "primary": "#008E97",
+            "secondary": "#FC4C02"
+        },
+        "seatgeekSlug": "miami-dolphins",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "minnesota-vikings",
+        "league": "nfl",
+        "city": "Minnesota",
+        "name": "Vikings",
+        "abbr": "MIN",
+        "conference": "NFC",
+        "division": "North",
+        "colors": {
+            "primary": "#4F2683",
+            "secondary": "#FFC62F"
+        },
+        "seatgeekSlug": "minnesota-vikings",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-england-patriots",
+        "league": "nfl",
+        "city": "New England",
+        "name": "Patriots",
+        "abbr": "NE",
+        "conference": "AFC",
+        "division": "East",
+        "colors": {
+            "primary": "#002244",
+            "secondary": "#C60C30"
+        },
+        "seatgeekSlug": "new-england-patriots",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-orleans-saints",
+        "league": "nfl",
+        "city": "New Orleans",
+        "name": "Saints",
+        "abbr": "NO",
+        "conference": "NFC",
+        "division": "South",
+        "colors": {
+            "primary": "#D3BC8D",
+            "secondary": "#101820"
+        },
+        "seatgeekSlug": "new-orleans-saints",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-york-giants",
+        "league": "nfl",
+        "city": "New York",
+        "name": "Giants",
+        "abbr": "NYG",
+        "conference": "NFC",
+        "division": "East",
+        "colors": {
+            "primary": "#0B2265",
+            "secondary": "#A71930"
+        },
+        "seatgeekSlug": "new-york-giants",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-york-jets",
+        "league": "nfl",
+        "city": "New York",
+        "name": "Jets",
+        "abbr": "NYJ",
+        "conference": "AFC",
+        "division": "East",
+        "colors": {
+            "primary": "#125740",
+            "secondary": "#FFFFFF"
+        },
+        "seatgeekSlug": "new-york-jets",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "philadelphia-eagles",
+        "league": "nfl",
+        "city": "Philadelphia",
+        "name": "Eagles",
+        "abbr": "PHI",
+        "conference": "NFC",
+        "division": "East",
+        "colors": {
+            "primary": "#004C54",
+            "secondary": "#A5ACAF"
+        },
+        "seatgeekSlug": "philadelphia-eagles",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "pittsburgh-steelers",
+        "league": "nfl",
+        "city": "Pittsburgh",
+        "name": "Steelers",
+        "abbr": "PIT",
+        "conference": "AFC",
+        "division": "North",
+        "colors": {
+            "primary": "#FFB612",
+            "secondary": "#101820"
+        },
+        "seatgeekSlug": "pittsburgh-steelers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "san-francisco-49ers",
+        "league": "nfl",
+        "city": "San Francisco",
+        "name": "49ers",
+        "abbr": "SF",
+        "conference": "NFC",
+        "division": "West",
+        "colors": {
+            "primary": "#AA0000",
+            "secondary": "#B3995D"
+        },
+        "seatgeekSlug": "san-francisco-49ers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "seattle-seahawks",
+        "league": "nfl",
+        "city": "Seattle",
+        "name": "Seahawks",
+        "abbr": "SEA",
+        "conference": "NFC",
+        "division": "West",
+        "colors": {
+            "primary": "#002244",
+            "secondary": "#69BE28"
+        },
+        "seatgeekSlug": "seattle-seahawks",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "tampa-bay-buccaneers",
+        "league": "nfl",
+        "city": "Tampa Bay",
+        "name": "Buccaneers",
+        "abbr": "TB",
+        "conference": "NFC",
+        "division": "South",
+        "colors": {
+            "primary": "#D50A0A",
+            "secondary": "#34302B"
+        },
+        "seatgeekSlug": "tampa-bay-buccaneers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "tennessee-titans",
+        "league": "nfl",
+        "city": "Tennessee",
+        "name": "Titans",
+        "abbr": "TEN",
+        "conference": "AFC",
+        "division": "South",
+        "colors": {
+            "primary": "#0C2340",
+            "secondary": "#4B92DB"
+        },
+        "seatgeekSlug": "tennessee-titans",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "washington-commanders",
+        "league": "nfl",
+        "city": "Washington",
+        "name": "Commanders",
+        "abbr": "WAS",
+        "conference": "NFC",
+        "division": "East",
+        "colors": {
+            "primary": "#5A1414",
+            "secondary": "#FFB612"
+        },
+        "seatgeekSlug": "washington-commanders",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "atlanta-hawks",
+        "league": "nba",
+        "city": "Atlanta",
+        "name": "Hawks",
+        "abbr": "ATL",
+        "conference": "East",
+        "division": "Southeast",
+        "colors": {
+            "primary": "#E03A3E",
+            "secondary": "#26282A"
+        },
+        "seatgeekSlug": "atlanta-hawks",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "boston-celtics",
+        "league": "nba",
+        "city": "Boston",
+        "name": "Celtics",
+        "abbr": "BOS",
+        "conference": "East",
+        "division": "Atlantic",
+        "colors": {
+            "primary": "#007A33",
+            "secondary": "#BA9653"
+        },
+        "seatgeekSlug": "boston-celtics",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "brooklyn-nets",
+        "league": "nba",
+        "city": "Brooklyn",
+        "name": "Nets",
+        "abbr": "BKN",
+        "conference": "East",
+        "division": "Atlantic",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "seatgeekSlug": "brooklyn-nets",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "charlotte-hornets",
+        "league": "nba",
+        "city": "Charlotte",
+        "name": "Hornets",
+        "abbr": "CHA",
+        "conference": "East",
+        "division": "Southeast",
+        "colors": {
+            "primary": "#1D1160",
+            "secondary": "#00788C"
+        },
+        "seatgeekSlug": "charlotte-hornets",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "chicago-bulls",
+        "league": "nba",
+        "city": "Chicago",
+        "name": "Bulls",
+        "abbr": "CHI",
+        "conference": "East",
+        "division": "Central",
+        "colors": {
+            "primary": "#CE1141",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "chicago-bulls",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "cleveland-cavaliers",
+        "league": "nba",
+        "city": "Cleveland",
+        "name": "Cavaliers",
+        "abbr": "CLE",
+        "conference": "East",
+        "division": "Central",
+        "colors": {
+            "primary": "#860038",
+            "secondary": "#FDBB30"
+        },
+        "seatgeekSlug": "cleveland-cavaliers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "dallas-mavericks",
+        "league": "nba",
+        "city": "Dallas",
+        "name": "Mavericks",
+        "abbr": "DAL",
+        "conference": "West",
+        "division": "Southwest",
+        "colors": {
+            "primary": "#00538C",
+            "secondary": "#B8C4CA"
+        },
+        "seatgeekSlug": "dallas-mavericks",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "denver-nuggets",
+        "league": "nba",
+        "city": "Denver",
+        "name": "Nuggets",
+        "abbr": "DEN",
+        "conference": "West",
+        "division": "Northwest",
+        "colors": {
+            "primary": "#0E2240",
+            "secondary": "#FEC524"
+        },
+        "seatgeekSlug": "denver-nuggets",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "detroit-pistons",
+        "league": "nba",
+        "city": "Detroit",
+        "name": "Pistons",
+        "abbr": "DET",
+        "conference": "East",
+        "division": "Central",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#1D42BA"
+        },
+        "seatgeekSlug": "detroit-pistons",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "golden-state-warriors",
+        "league": "nba",
+        "city": "Golden State",
+        "name": "Warriors",
+        "abbr": "GSW",
+        "conference": "West",
+        "division": "Pacific",
+        "colors": {
+            "primary": "#1D428A",
+            "secondary": "#FFC72C"
+        },
+        "seatgeekSlug": "golden-state-warriors",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "houston-rockets",
+        "league": "nba",
+        "city": "Houston",
+        "name": "Rockets",
+        "abbr": "HOU",
+        "conference": "West",
+        "division": "Southwest",
+        "colors": {
+            "primary": "#CE1141",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "houston-rockets",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "indiana-pacers",
+        "league": "nba",
+        "city": "Indiana",
+        "name": "Pacers",
+        "abbr": "IND",
+        "conference": "East",
+        "division": "Central",
+        "colors": {
+            "primary": "#002D62",
+            "secondary": "#FDBB30"
+        },
+        "seatgeekSlug": "indiana-pacers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "los-angeles-clippers",
+        "league": "nba",
+        "city": "Los Angeles",
+        "name": "Clippers",
+        "abbr": "LAC",
+        "conference": "West",
+        "division": "Pacific",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#1D428A"
+        },
+        "seatgeekSlug": "los-angeles-clippers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "los-angeles-lakers",
+        "league": "nba",
+        "city": "Los Angeles",
+        "name": "Lakers",
+        "abbr": "LAL",
+        "conference": "West",
+        "division": "Pacific",
+        "colors": {
+            "primary": "#552583",
+            "secondary": "#FDB927"
+        },
+        "seatgeekSlug": "los-angeles-lakers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "memphis-grizzlies",
+        "league": "nba",
+        "city": "Memphis",
+        "name": "Grizzlies",
+        "abbr": "MEM",
+        "conference": "West",
+        "division": "Southwest",
+        "colors": {
+            "primary": "#5D76A9",
+            "secondary": "#12173F"
+        },
+        "seatgeekSlug": "memphis-grizzlies",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "miami-heat",
+        "league": "nba",
+        "city": "Miami",
+        "name": "Heat",
+        "abbr": "MIA",
+        "conference": "East",
+        "division": "Southeast",
+        "colors": {
+            "primary": "#98002E",
+            "secondary": "#F9A01B"
+        },
+        "seatgeekSlug": "miami-heat",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "milwaukee-bucks",
+        "league": "nba",
+        "city": "Milwaukee",
+        "name": "Bucks",
+        "abbr": "MIL",
+        "conference": "East",
+        "division": "Central",
+        "colors": {
+            "primary": "#00471B",
+            "secondary": "#EEE1C6"
+        },
+        "seatgeekSlug": "milwaukee-bucks",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "minnesota-timberwolves",
+        "league": "nba",
+        "city": "Minnesota",
+        "name": "Timberwolves",
+        "abbr": "MIN",
+        "conference": "West",
+        "division": "Northwest",
+        "colors": {
+            "primary": "#0C2340",
+            "secondary": "#78BE20"
+        },
+        "seatgeekSlug": "minnesota-timberwolves",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-orleans-pelicans",
+        "league": "nba",
+        "city": "New Orleans",
+        "name": "Pelicans",
+        "abbr": "NOP",
+        "conference": "West",
+        "division": "Southwest",
+        "colors": {
+            "primary": "#0C2340",
+            "secondary": "#C8102E"
+        },
+        "seatgeekSlug": "new-orleans-pelicans",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "new-york-knicks",
+        "league": "nba",
+        "city": "New York",
+        "name": "Knicks",
+        "abbr": "NYK",
+        "conference": "East",
+        "division": "Atlantic",
+        "colors": {
+            "primary": "#006BB6",
+            "secondary": "#F58426"
+        },
+        "seatgeekSlug": "new-york-knicks",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "oklahoma-city-thunder",
+        "league": "nba",
+        "city": "Oklahoma City",
+        "name": "Thunder",
+        "abbr": "OKC",
+        "conference": "West",
+        "division": "Northwest",
+        "colors": {
+            "primary": "#007AC1",
+            "secondary": "#EF3B24"
+        },
+        "seatgeekSlug": "oklahoma-city-thunder",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "orlando-magic",
+        "league": "nba",
+        "city": "Orlando",
+        "name": "Magic",
+        "abbr": "ORL",
+        "conference": "East",
+        "division": "Southeast",
+        "colors": {
+            "primary": "#0077C0",
+            "secondary": "#C4CED4"
+        },
+        "seatgeekSlug": "orlando-magic",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "philadelphia-76ers",
+        "league": "nba",
+        "city": "Philadelphia",
+        "name": "76ers",
+        "abbr": "PHI",
+        "conference": "East",
+        "division": "Atlantic",
+        "colors": {
+            "primary": "#006BB6",
+            "secondary": "#ED174C"
+        },
+        "seatgeekSlug": "philadelphia-76ers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "phoenix-suns",
+        "league": "nba",
+        "city": "Phoenix",
+        "name": "Suns",
+        "abbr": "PHX",
+        "conference": "West",
+        "division": "Pacific",
+        "colors": {
+            "primary": "#1D1160",
+            "secondary": "#E56020"
+        },
+        "seatgeekSlug": "phoenix-suns",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "portland-trail-blazers",
+        "league": "nba",
+        "city": "Portland",
+        "name": "Trail Blazers",
+        "abbr": "POR",
+        "conference": "West",
+        "division": "Northwest",
+        "colors": {
+            "primary": "#E03A3E",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "portland-trail-blazers",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "sacramento-kings",
+        "league": "nba",
+        "city": "Sacramento",
+        "name": "Kings",
+        "abbr": "SAC",
+        "conference": "West",
+        "division": "Pacific",
+        "colors": {
+            "primary": "#5A2D81",
+            "secondary": "#63727A"
+        },
+        "seatgeekSlug": "sacramento-kings",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "san-antonio-spurs",
+        "league": "nba",
+        "city": "San Antonio",
+        "name": "Spurs",
+        "abbr": "SAS",
+        "conference": "West",
+        "division": "Southwest",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#C4CED4"
+        },
+        "seatgeekSlug": "san-antonio-spurs",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "toronto-raptors",
+        "league": "nba",
+        "city": "Toronto",
+        "name": "Raptors",
+        "abbr": "TOR",
+        "conference": "East",
+        "division": "Atlantic",
+        "colors": {
+            "primary": "#CE1141",
+            "secondary": "#000000"
+        },
+        "seatgeekSlug": "toronto-raptors",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "utah-jazz",
+        "league": "nba",
+        "city": "Utah",
+        "name": "Jazz",
+        "abbr": "UTA",
+        "conference": "West",
+        "division": "Northwest",
+        "colors": {
+            "primary": "#002B5C",
+            "secondary": "#F9A01B"
+        },
+        "seatgeekSlug": "utah-jazz",
+        "tmAttractionId": null
+    },
+    {
+        "slug": "washington-wizards",
+        "league": "nba",
+        "city": "Washington",
+        "name": "Wizards",
+        "abbr": "WAS",
+        "conference": "East",
+        "division": "Southeast",
+        "colors": {
+            "primary": "#002B5C",
+            "secondary": "#E31837"
+        },
+        "seatgeekSlug": "washington-wizards",
+        "tmAttractionId": null
+    }
+]
