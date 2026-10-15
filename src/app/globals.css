@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FanTicket Hub — design tokens (roadmap §4)
+   Sports terminal / stadium jumbotron. Dark-first, dense, data-forward.
+   Depth comes from 1px borders — never shadows.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* palette — single accent (volt) */
+  --ink: #0b0c0e; /* page bg */
+  --surface: #121417;
+  --surface-2: #17191d;
+  --line: #23262b; /* 1px borders everywhere */
+  --line-soft: #1a1c20;
+  --text: #f2f3f5;
+  --text-dim: #9ba1a9;
+  --volt: #c8ff3d; /* the one accent */
+  --volt-press: #a8dc2a;
+  --amber: #ffb224; /* "rising price" only */
+  --red: #ff5c5c; /* sold out / errors only */
+
+  /* geometry */
+  --radius: 4px; /* max 6px */
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-volt: var(--volt);
+  --color-volt-press: var(--volt-press);
+  --color-amber: var(--amber);
+  --color-red: var(--red);
+
+  /* Cap every radius at 6px so no "rounded-2xl card" look can sneak in (§4). */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 6px;
+  --radius-3xl: 6px;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+}
+
+@layer base {
+  html {
+    background: var(--ink);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headlines: condensed, UPPERCASE, tight — scoreboard energy. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-barlow-condensed), ui-sans-serif, system-ui,
+      sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.94;
+  }
+
+  ::selection {
+    background: var(--volt);
+    color: var(--ink);
+  }
+
+  /* Keyboard focus only, thin volt ring. */
+  :focus-visible {
+    outline: 1px solid var(--volt);
+    outline-offset: 1px;
+  }
+}
+
+@layer utilities {
+  /* ALL prices / stats render mono + tabular + right-aligned. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Live ticker strip (§4) — marquee of recent drops. Pauses on hover and
+   honours prefers-reduced-motion.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-viewport {
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 44s linear infinite;
+  will-change: transform;
+}
+
+.ticker-viewport:hover .ticker-track,
+.ticker-viewport:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
