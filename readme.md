@@ -7,7 +7,7 @@ Source of truth for specs: roadmap.md — architecture (§3),design system (§4)
 
 Status
 Phase	Scope	State
-0	Foundation (setup, tokens, DB, auth)	☐
+0	Foundation (setup, tokens, DB, auth)	☑
 1	MVP (providers, sync, pages, email alerts)	☐
 2	Intelligence & polish (history, push, deal scores)	☐
 3	Premium, trust, hardening (Stripe, SMS, e2e)	☐
