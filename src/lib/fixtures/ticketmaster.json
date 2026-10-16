@@ -3,7 +3,7 @@
   "type": "inventory",
   "isMock": true,
   "note": "MOCK FIXTURE — never presented as real data.",
-  "generatedAt": "2026-10-15T18:13:36.669Z",
+  "generatedAt": "2026-10-15T23:44:23.544Z",
   "quotes": {
     "nfl-pittsburgh-steelers-at-chicago-bears-2026-10-18": {
       "providerId": "ticketmaster",
@@ -13,7 +13,7 @@
       "allInIsEstimate": true,
       "listingCount": 659,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-pittsburgh-steelers-at-chicago-bears-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-green-bay-packers-at-san-francisco-49ers-2026-10-18": {
       "providerId": "ticketmaster",
@@ -23,7 +23,7 @@
       "allInIsEstimate": true,
       "listingCount": 1559,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-green-bay-packers-at-san-francisco-49ers-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-buffalo-bills-at-dallas-cowboys-2026-10-18": {
       "providerId": "ticketmaster",
@@ -33,7 +33,7 @@
       "allInIsEstimate": true,
       "listingCount": 1091,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-buffalo-bills-at-dallas-cowboys-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-philadelphia-eagles-at-kansas-city-chiefs-2026-10-18": {
       "providerId": "ticketmaster",
@@ -43,7 +43,7 @@
       "allInIsEstimate": true,
       "listingCount": 635,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-philadelphia-eagles-at-kansas-city-chiefs-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-chicago-bears-at-green-bay-packers-2026-10-25": {
       "providerId": "ticketmaster",
@@ -53,7 +53,7 @@
       "allInIsEstimate": true,
       "listingCount": 1256,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-chicago-bears-at-green-bay-packers-2026-10-25",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-pittsburgh-steelers-at-dallas-cowboys-2026-10-25": {
       "providerId": "ticketmaster",
@@ -63,7 +63,7 @@
       "allInIsEstimate": true,
       "listingCount": 1393,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-pittsburgh-steelers-at-dallas-cowboys-2026-10-25",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-philadelphia-eagles-at-san-francisco-49ers-2026-10-25": {
       "providerId": "ticketmaster",
@@ -73,7 +73,7 @@
       "allInIsEstimate": true,
       "listingCount": 1627,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-philadelphia-eagles-at-san-francisco-49ers-2026-10-25",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nfl-buffalo-bills-at-kansas-city-chiefs-2026-10-25": {
       "providerId": "ticketmaster",
@@ -83,7 +83,7 @@
       "allInIsEstimate": true,
       "listingCount": 627,
       "url": "https://mock.fantickethub.local/ticketmaster/nfl-buffalo-bills-at-kansas-city-chiefs-2026-10-25",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-los-angeles-lakers-2026-10-16": {
       "providerId": "ticketmaster",
@@ -93,7 +93,7 @@
       "allInIsEstimate": true,
       "listingCount": 727,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-los-angeles-lakers-2026-10-16",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-boston-celtics-at-miami-heat-2026-10-16": {
       "providerId": "ticketmaster",
@@ -103,7 +103,7 @@
       "allInIsEstimate": true,
       "listingCount": 1490,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-boston-celtics-at-miami-heat-2026-10-16",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-milwaukee-bucks-at-new-york-knicks-2026-10-16": {
       "providerId": "ticketmaster",
@@ -113,7 +113,7 @@
       "allInIsEstimate": true,
       "listingCount": 101,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-milwaukee-bucks-at-new-york-knicks-2026-10-16",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-golden-state-warriors-at-denver-nuggets-2026-10-16": {
       "providerId": "ticketmaster",
@@ -123,7 +123,7 @@
       "allInIsEstimate": true,
       "listingCount": 1140,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-golden-state-warriors-at-denver-nuggets-2026-10-16",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-los-angeles-lakers-at-boston-celtics-2026-10-18": {
       "providerId": "ticketmaster",
@@ -133,7 +133,7 @@
       "allInIsEstimate": true,
       "listingCount": 358,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-los-angeles-lakers-at-boston-celtics-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-new-york-knicks-2026-10-18": {
       "providerId": "ticketmaster",
@@ -143,7 +143,7 @@
       "allInIsEstimate": true,
       "listingCount": 460,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-new-york-knicks-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-golden-state-warriors-at-miami-heat-2026-10-18": {
       "providerId": "ticketmaster",
@@ -153,7 +153,7 @@
       "allInIsEstimate": true,
       "listingCount": 698,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-golden-state-warriors-at-miami-heat-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-milwaukee-bucks-at-denver-nuggets-2026-10-18": {
       "providerId": "ticketmaster",
@@ -163,7 +163,7 @@
       "allInIsEstimate": true,
       "listingCount": 323,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-milwaukee-bucks-at-denver-nuggets-2026-10-18",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-new-york-knicks-at-los-angeles-lakers-2026-10-20": {
       "providerId": "ticketmaster",
@@ -173,7 +173,7 @@
       "allInIsEstimate": true,
       "listingCount": 1386,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-new-york-knicks-at-los-angeles-lakers-2026-10-20",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-golden-state-warriors-at-boston-celtics-2026-10-20": {
       "providerId": "ticketmaster",
@@ -183,7 +183,7 @@
       "allInIsEstimate": true,
       "listingCount": 1342,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-golden-state-warriors-at-boston-celtics-2026-10-20",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-denver-nuggets-2026-10-20": {
       "providerId": "ticketmaster",
@@ -193,7 +193,7 @@
       "allInIsEstimate": true,
       "listingCount": 482,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-denver-nuggets-2026-10-20",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-milwaukee-bucks-at-miami-heat-2026-10-20": {
       "providerId": "ticketmaster",
@@ -203,7 +203,7 @@
       "allInIsEstimate": true,
       "listingCount": 709,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-milwaukee-bucks-at-miami-heat-2026-10-20",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-los-angeles-lakers-at-golden-state-warriors-2026-10-22": {
       "providerId": "ticketmaster",
@@ -213,7 +213,7 @@
       "allInIsEstimate": true,
       "listingCount": 746,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-los-angeles-lakers-at-golden-state-warriors-2026-10-22",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-new-york-knicks-at-denver-nuggets-2026-10-22": {
       "providerId": "ticketmaster",
@@ -223,7 +223,7 @@
       "allInIsEstimate": true,
       "listingCount": 1144,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-new-york-knicks-at-denver-nuggets-2026-10-22",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-milwaukee-bucks-at-boston-celtics-2026-10-22": {
       "providerId": "ticketmaster",
@@ -233,7 +233,7 @@
       "allInIsEstimate": true,
       "listingCount": 1416,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-milwaukee-bucks-at-boston-celtics-2026-10-22",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-miami-heat-2026-10-22": {
       "providerId": "ticketmaster",
@@ -243,7 +243,7 @@
       "allInIsEstimate": true,
       "listingCount": 1198,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-miami-heat-2026-10-22",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-denver-nuggets-at-los-angeles-lakers-2026-10-24": {
       "providerId": "ticketmaster",
@@ -253,7 +253,7 @@
       "allInIsEstimate": true,
       "listingCount": 1341,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-denver-nuggets-at-los-angeles-lakers-2026-10-24",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-milwaukee-bucks-at-golden-state-warriors-2026-10-24": {
       "providerId": "ticketmaster",
@@ -263,7 +263,7 @@
       "allInIsEstimate": true,
       "listingCount": 256,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-milwaukee-bucks-at-golden-state-warriors-2026-10-24",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-new-york-knicks-at-miami-heat-2026-10-24": {
       "providerId": "ticketmaster",
@@ -273,7 +273,7 @@
       "allInIsEstimate": true,
       "listingCount": 1283,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-new-york-knicks-at-miami-heat-2026-10-24",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-boston-celtics-2026-10-24": {
       "providerId": "ticketmaster",
@@ -283,7 +283,7 @@
       "allInIsEstimate": true,
       "listingCount": 937,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-boston-celtics-2026-10-24",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-los-angeles-lakers-at-milwaukee-bucks-2026-10-27": {
       "providerId": "ticketmaster",
@@ -293,7 +293,7 @@
       "allInIsEstimate": true,
       "listingCount": 610,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-los-angeles-lakers-at-milwaukee-bucks-2026-10-27",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-denver-nuggets-at-miami-heat-2026-10-27": {
       "providerId": "ticketmaster",
@@ -303,7 +303,7 @@
       "allInIsEstimate": true,
       "listingCount": 1069,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-denver-nuggets-at-miami-heat-2026-10-27",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-dallas-mavericks-at-golden-state-warriors-2026-10-27": {
       "providerId": "ticketmaster",
@@ -313,7 +313,7 @@
       "allInIsEstimate": true,
       "listingCount": 772,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-dallas-mavericks-at-golden-state-warriors-2026-10-27",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     },
     "nba-new-york-knicks-at-boston-celtics-2026-10-27": {
       "providerId": "ticketmaster",
@@ -323,7 +323,7 @@
       "allInIsEstimate": true,
       "listingCount": 184,
       "url": "https://mock.fantickethub.local/ticketmaster/nba-new-york-knicks-at-boston-celtics-2026-10-27",
-      "fetchedAt": "2026-10-15T18:13:36.669Z"
+      "fetchedAt": "2026-10-15T23:44:23.544Z"
     }
   }
 }

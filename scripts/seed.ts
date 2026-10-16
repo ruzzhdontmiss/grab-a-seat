@@ -251,14 +251,15 @@ async function main() {
     for (const slug of generatedSlugs) {
       const rng = mulberry32(hashString(`${providerId}:${slug}`));
       const baseCents = 4_000 + Math.floor(rng() * 14_000);
-      const hasFeesData = providerId === "seatgeek";
-      const feesCents = hasFeesData ? 0 : Math.round(baseCents * 0.2);
+      // Neither SeatGeek nor Ticketmaster documents fee-inclusive prices, so
+      // every fixture total carries the §5 20% estimate (allInIsEstimate: true).
+      const feesCents = Math.round(baseCents * 0.2);
       quotes[slug] = {
         providerId,
         minPriceCents: baseCents,
         feesCents,
         allInCents: baseCents + feesCents,
-        allInIsEstimate: !hasFeesData,
+        allInIsEstimate: true,
         listingCount: 40 + Math.floor(rng() * 1_600),
         url: `https://mock.fantickethub.local/${providerId}/${slug}`,
         fetchedAt: generatedAt,

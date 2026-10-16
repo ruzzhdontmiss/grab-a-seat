@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import {
   boolean,
   index,
@@ -264,3 +265,80 @@ export const syncLog = pgTable("sync_log", {
   rowCount: integer("row_count").default(0).notNull(),
   error: text("error"),
 });
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * Relations — TypeScript-only (no migration). Enables `db.query.*` reads with
+ * nested `with:` selections, e.g. game → homeTeam / awayTeam / venue.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+export const usersRelations = relations(users, ({ many }) => ({
+  sessions: many(sessions),
+  accounts: many(accounts),
+  follows: many(follows),
+  trackedGames: many(trackedGames),
+  alertEvents: many(alertEvents),
+  pushSubs: many(pushSubs),
+  affiliateClicks: many(affiliateClicks),
+}));
+
+export const sessionsRelations = relations(sessions, ({ one }) => ({
+  user: one(users, { fields: [sessions.userId], references: [users.id] }),
+}));
+
+export const accountsRelations = relations(accounts, ({ one }) => ({
+  user: one(users, { fields: [accounts.userId], references: [users.id] }),
+}));
+
+export const teamsRelations = relations(teams, ({ many }) => ({
+  homeGames: many(games, { relationName: "homeTeam" }),
+  awayGames: many(games, { relationName: "awayTeam" }),
+  follows: many(follows),
+}));
+
+export const venuesRelations = relations(venues, ({ many }) => ({
+  games: many(games),
+}));
+
+export const gamesRelations = relations(games, ({ one, many }) => ({
+  homeTeam: one(teams, {
+    fields: [games.homeTeamId],
+    references: [teams.id],
+    relationName: "homeTeam",
+  }),
+  awayTeam: one(teams, {
+    fields: [games.awayTeamId],
+    references: [teams.id],
+    relationName: "awayTeam",
+  }),
+  venue: one(venues, { fields: [games.venueId], references: [venues.id] }),
+  snapshots: many(priceSnapshots),
+  trackedGames: many(trackedGames),
+}));
+
+export const followsRelations = relations(follows, ({ one }) => ({
+  user: one(users, { fields: [follows.userId], references: [users.id] }),
+  team: one(teams, { fields: [follows.teamId], references: [teams.id] }),
+}));
+
+export const trackedGamesRelations = relations(trackedGames, ({ one }) => ({
+  user: one(users, { fields: [trackedGames.userId], references: [users.id] }),
+  game: one(games, { fields: [trackedGames.gameId], references: [games.id] }),
+}));
+
+export const priceSnapshotsRelations = relations(priceSnapshots, ({ one }) => ({
+  game: one(games, { fields: [priceSnapshots.gameId], references: [games.id] }),
+}));
+
+export const alertEventsRelations = relations(alertEvents, ({ one }) => ({
+  user: one(users, { fields: [alertEvents.userId], references: [users.id] }),
+  game: one(games, { fields: [alertEvents.gameId], references: [games.id] }),
+}));
+
+export const pushSubsRelations = relations(pushSubs, ({ one }) => ({
+  user: one(users, { fields: [pushSubs.userId], references: [users.id] }),
+}));
+
+export const affiliateClicksRelations = relations(affiliateClicks, ({ one }) => ({
+  game: one(games, { fields: [affiliateClicks.gameId], references: [games.id] }),
+  user: one(users, { fields: [affiliateClicks.userId], references: [users.id] }),
+}));
