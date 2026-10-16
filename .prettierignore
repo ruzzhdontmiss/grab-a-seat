@@ -3,6 +3,7 @@ node_modules
 pnpm-lock.yaml
 drizzle
 public
+.email-outbox
 *.md
 teams.json
 .env*

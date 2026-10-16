@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Mock-Mode email outbox (dev only, written by lib/email/send.ts)
+/.email-outbox/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
