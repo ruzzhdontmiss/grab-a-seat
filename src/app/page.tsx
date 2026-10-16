@@ -1,9 +1,11 @@
-import { ArrowDownRight, ArrowUpRight, Bell, Search, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
+import { JsonLd } from "@/components/domain/json-ld";
+import { TeamSearch } from "@/components/domain/team-search";
+import { TrendArrow } from "@/components/domain/trend-arrow";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
 import { TeamMonogram } from "@/components/ui/monogram";
 import {
   Table,
@@ -13,95 +15,47 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import type { TeamColors } from "@/lib/types";
-import { formatCents } from "@/lib/utils";
+import { getAllTeams, getUpcomingGames } from "@/lib/db/queries";
+import { getProvider } from "@/lib/providers";
+import { absoluteUrl, SITE_NAME } from "@/lib/seo";
+import { formatCents, formatDateShort } from "@/lib/utils";
+import { buildViews } from "@/lib/views";
 
-const TOKENS = [
-  { name: "--ink", hex: "#0B0C0E" },
-  { name: "--surface", hex: "#121417" },
-  { name: "--surface-2", hex: "#17191D" },
-  { name: "--line", hex: "#23262B" },
-  { name: "--line-soft", hex: "#1A1C20" },
-  { name: "--text", hex: "#F2F3F5" },
-  { name: "--text-dim", hex: "#9BA1A9" },
-  { name: "--volt", hex: "#C8FF3D" },
-  { name: "--volt-press", hex: "#A8DC2A" },
-  { name: "--amber", hex: "#FFB224" },
-  { name: "--red", hex: "#FF5C5C" },
-];
-
-interface DemoTeam {
-  abbr: string;
-  colors: TeamColors;
-}
-
-interface DropRow {
-  id: string;
-  league: string;
-  away: DemoTeam;
-  home: DemoTeam;
-  venue: string;
-  allIn: number;
-  prev: number;
-  provider: string;
-  est?: boolean;
-}
-
-const DROPS: DropRow[] = [
-  {
-    id: "d1",
-    league: "NBA",
-    away: { abbr: "LAL", colors: { primary: "#552583", secondary: "#FDB927" } },
-    home: { abbr: "BOS", colors: { primary: "#007A33", secondary: "#BA9653" } },
-    venue: "TD Garden",
-    allIn: 5800,
-    prev: 7100,
-    provider: "SeatGeek",
-  },
-  {
-    id: "d2",
-    league: "NFL",
-    away: { abbr: "CHI", colors: { primary: "#0B162A", secondary: "#C83803" } },
-    home: { abbr: "GB", colors: { primary: "#203731", secondary: "#FFB612" } },
-    venue: "Lambeau Field",
-    allIn: 11800,
-    prev: 13400,
-    provider: "Ticketmaster",
-    est: true,
-  },
-  {
-    id: "d3",
-    league: "NBA",
-    away: { abbr: "BKN", colors: { primary: "#000000", secondary: "#FFFFFF" } },
-    home: { abbr: "TOR", colors: { primary: "#CE1141", secondary: "#000000" } },
-    venue: "Scotiabank Arena",
-    allIn: 4200,
-    prev: 6100,
-    provider: "SeatGeek",
-  },
-  {
-    id: "d4",
-    league: "NFL",
-    away: { abbr: "DAL", colors: { primary: "#003594", secondary: "#869397" } },
-    home: { abbr: "PHI", colors: { primary: "#004C54", secondary: "#A5ACAF" } },
-    venue: "Lincoln Financial Field",
-    allIn: 14300,
-    prev: 18800,
-    provider: "TickPick",
-    est: true,
-  },
-];
+export const revalidate = 300;
 
 const STATS = [
   { label: "Providers", value: "6" },
-  { label: "Avg. saved", value: "23%" },
   { label: "Sync interval", value: "15m" },
-  { label: "Fees", value: "All-in" },
+  { label: "Pricing", value: "All-in" },
+  { label: "Coverage", value: "NFL · NBA" },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [teams, games] = await Promise.all([
+    getAllTeams(),
+    getUpcomingGames({ limit: 300 }),
+  ]);
+  const views = await buildViews(games);
+
+  const drops = [...views.values()]
+    .filter((view) => view.trend.direction === "down" && view.trend.pct !== null)
+    .sort((a, b) => (a.trend.pct as number) - (b.trend.pct as number))
+    .slice(0, 8);
+
+  const nflCount = teams.filter((team) => team.league === "nfl").length;
+  const nbaCount = teams.filter((team) => team.league === "nba").length;
+
   return (
     <div className="space-y-14">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: absoluteUrl("/"),
+        }}
+      />
+
       {/* Hero ---------------------------------------------------------------- */}
       <section className="border-line border-b pb-12">
         <p className="label">NFL · NBA · all-in pricing</p>
@@ -115,16 +69,28 @@ export default function HomePage() {
           cheapest all-in price per game. Set a number. We tell you the moment it
           clears.
         </p>
-        <div className="mt-7 flex flex-wrap items-center gap-3">
-          <Link href="/register" className={buttonVariants({ size: "lg" })}>
-            <Search size={15} strokeWidth={2.25} />
-            Find tickets for your team
+        <div className="mt-7">
+          <TeamSearch
+            teams={teams.map((team) => ({
+              id: team.id,
+              slug: team.slug,
+              league: team.league,
+              name: team.name,
+              city: team.city,
+              abbr: team.abbr,
+              colors: team.colors,
+            }))}
+          />
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Link href="/nfl" className={buttonVariants({ size: "lg" })}>
+            NFL prices
           </Link>
           <Link
-            href="/login"
+            href="/nba"
             className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
-            Sign in
+            NBA prices
           </Link>
         </div>
       </section>
@@ -144,229 +110,143 @@ export default function HomePage() {
         </dl>
       </section>
 
-      {/* Sample drops table -------------------------------------------------- */}
+      {/* League split -------------------------------------------------------- */}
+      <section className="grid gap-4 sm:grid-cols-2">
+        {[
+          { league: "nfl" as const, count: nflCount, blurb: "32 teams · weekly slate" },
+          {
+            league: "nba" as const,
+            count: nbaCount,
+            blurb: "30 teams · nightly slate",
+          },
+        ].map((option) => (
+          <Link
+            key={option.league}
+            href={`/${option.league}`}
+            className="border-line bg-surface hover:border-volt/60 group rounded-md border p-6 transition-colors duration-150"
+          >
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="label">{option.league}</p>
+                <h2 className="mt-3 text-3xl">{option.league.toUpperCase()}</h2>
+                <p className="text-text-dim mt-2 text-[13px]">{option.blurb}</p>
+              </div>
+              <span className="text-text-dim group-hover:text-volt font-mono text-[12px] tabular-nums">
+                {option.count} teams
+              </span>
+            </div>
+            <span className="text-volt mt-6 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.12em] uppercase">
+              View prices
+              <ArrowUpRight size={13} />
+            </span>
+          </Link>
+        ))}
+      </section>
+
+      {/* Biggest drops ------------------------------------------------------- */}
       <section>
         <div className="border-line mb-4 flex flex-wrap items-end justify-between gap-3 border-b pb-3">
           <h2 className="text-2xl">Biggest drops right now</h2>
-          <span className="label">last 24h · est. all-in</span>
+          <span className="label">vs previous sync · all-in</span>
         </div>
 
-        <div className="border-line bg-surface overflow-x-auto border">
-          <Table>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead>Game</TableHead>
-                <TableHead className="hidden sm:table-cell">Venue</TableHead>
-                <TableHead numeric>All-in</TableHead>
-                <TableHead numeric className="hidden sm:table-cell">
-                  7d
-                </TableHead>
-                <TableHead>Provider</TableHead>
-                <TableHead className="text-right">Deal</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {DROPS.map((row) => {
-                const pct = Math.round(((row.allIn - row.prev) / row.prev) * 100);
-                return (
-                  <TableRow key={row.id}>
-                    <TableCell>
-                      <div className="flex items-center gap-2.5">
-                        <TeamMonogram abbr={row.away.abbr} colors={row.away.colors} />
-                        <span className="text-text-dim font-mono text-[12px]">@</span>
-                        <TeamMonogram abbr={row.home.abbr} colors={row.home.colors} />
-                        <span className="font-display ml-1 text-[15px] tracking-tight">
-                          {row.away.abbr}–{row.home.abbr}
-                        </span>
-                        <Badge variant="outline">{row.league}</Badge>
-                      </div>
-                    </TableCell>
-                    <TableCell className="text-text-dim hidden sm:table-cell">
-                      {row.venue}
-                    </TableCell>
-                    <TableCell numeric>
-                      {formatCents(row.allIn)}
-                      {row.est && <span className="text-text-dim ml-1">est.</span>}
-                    </TableCell>
-                    <TableCell numeric className="hidden sm:table-cell">
-                      <span className="text-volt inline-flex items-center justify-end gap-1">
-                        <ArrowDownRight size={13} />
-                        {pct}%
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <Badge variant="neutral">{row.provider}</Badge>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <span
-                        className={buttonVariants({
-                          variant: "secondary",
-                          size: "sm",
-                        })}
-                      >
-                        View
-                        <ArrowUpRight size={13} />
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </div>
+        {drops.length === 0 ? (
+          <div className="border-line bg-surface rounded-md border p-6">
+            <p className="text-text text-[14px]">No price moves yet — tracking now.</p>
+            <p className="text-text-dim mt-2 text-[13px]">
+              Run the sync job to take the first snapshots:{" "}
+              <code className="font-mono">
+                curl -X POST /api/cron/sync -H &quot;Authorization: Bearer
+                $CRON_SECRET&quot;
+              </code>
+            </p>
+          </div>
+        ) : (
+          <div className="border-line bg-surface overflow-x-auto border">
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-transparent">
+                  <TableHead>Game</TableHead>
+                  <TableHead className="hidden sm:table-cell">Venue</TableHead>
+                  <TableHead numeric>All-in</TableHead>
+                  <TableHead numeric>Change</TableHead>
+                  <TableHead>Provider</TableHead>
+                  <TableHead className="text-right">Deal</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {drops.map((view) => {
+                  const provider = view.bestProviderId
+                    ? getProvider(view.bestProviderId)
+                    : null;
+                  return (
+                    <TableRow key={view.game.id}>
+                      <TableCell>
+                        <div className="flex items-center gap-2.5">
+                          <TeamMonogram
+                            abbr={view.game.awayTeam.abbr}
+                            colors={view.game.awayTeam.colors}
+                          />
+                          <span className="text-text-dim font-mono text-[12px]">@</span>
+                          <TeamMonogram
+                            abbr={view.game.homeTeam.abbr}
+                            colors={view.game.homeTeam.colors}
+                          />
+                          <Link
+                            href={`/game/${view.game.slug}`}
+                            className="font-display hover:text-volt ml-1 text-[15px] tracking-tight transition-colors duration-150"
+                          >
+                            {view.game.awayTeam.abbr}–{view.game.homeTeam.abbr}
+                          </Link>
+                          <span className="text-text-dim hidden font-mono text-[11px] sm:inline">
+                            {formatDateShort(view.game.startsAt)}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-text-dim hidden sm:table-cell">
+                        {view.game.venue?.name ?? "—"}
+                      </TableCell>
+                      <TableCell numeric>
+                        {formatCents(view.bestAllIn)}
+                        {view.bestIsEstimate ? (
+                          <span className="text-text-dim ml-1">est.</span>
+                        ) : null}
+                      </TableCell>
+                      <TableCell numeric>
+                        <TrendArrow trend={view.trend} />
+                      </TableCell>
+                      <TableCell>
+                        {provider ? (
+                          <Badge variant="neutral">{provider.name}</Badge>
+                        ) : (
+                          "—"
+                        )}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Link
+                          href={`/game/${view.game.slug}`}
+                          className={buttonVariants({
+                            variant: "secondary",
+                            size: "sm",
+                          })}
+                        >
+                          Compare
+                          <ArrowUpRight size={13} />
+                        </Link>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </div>
+        )}
 
         <p className="text-text-dim mt-3 flex items-center gap-2 text-[12px]">
           <ShieldCheck size={14} className="text-volt" />
           Estimates marked <span className="text-text">“est.”</span> — all-in totals,
-          fees included, per FTC junk-fee guidance.
+          fees included where known, per FTC junk-fee guidance.
         </p>
-      </section>
-
-      {/* Design tokens ------------------------------------------------------- */}
-      <section className="border-line border-t pt-10">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="text-2xl">Design tokens</h2>
-            <p className="label mt-2">roadmap §4 — volt is the only accent</p>
-          </div>
-          <span className="label">dark-first · borders not shadows</span>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2">
-          {/* Palette */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Palette</CardTitle>
-              <span className="label">CSS vars</span>
-            </CardHeader>
-            <CardBody>
-              <ul className="bg-line grid grid-cols-1 gap-px sm:grid-cols-2">
-                {TOKENS.map((token) => (
-                  <li
-                    key={token.name}
-                    className="bg-surface flex items-center gap-3 px-3 py-2"
-                  >
-                    <span
-                      className="border-line h-5 w-5 shrink-0 rounded-[3px] border"
-                      style={{ background: token.hex }}
-                    />
-                    <span className="text-text-dim font-mono text-[11px]">
-                      {token.name}
-                    </span>
-                    <span className="ml-auto font-mono text-[11px] tabular-nums">
-                      {token.hex}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </CardBody>
-          </Card>
-
-          {/* Typography */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Type</CardTitle>
-              <span className="label">3 families</span>
-            </CardHeader>
-            <CardBody className="space-y-5">
-              <div>
-                <p className="label mb-2">Barlow Condensed · 700</p>
-                <p className="font-display text-4xl tracking-tight uppercase">
-                  Cheapest since Dec 12
-                </p>
-              </div>
-              <div>
-                <p className="label mb-2">Archivo · 400/500</p>
-                <p className="text-text-dim text-[15px]">
-                  Body and UI text stays plain and readable at 14–15px. No marketing
-                  fluff, no emoji.
-                </p>
-              </div>
-              <div>
-                <p className="label mb-2">JetBrains Mono · tabular</p>
-                <p className="font-mono text-2xl tabular-nums">
-                  $58.00 <span className="text-volt">▼ 18%</span>
-                </p>
-              </div>
-            </CardBody>
-          </Card>
-
-          {/* Buttons & badges */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Controls</CardTitle>
-              <span className="label">4px radius</span>
-            </CardHeader>
-            <CardBody className="space-y-5">
-              <div className="flex flex-wrap items-center gap-2">
-                <Button>Primary</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="ghost">Ghost</Button>
-                <Button variant="danger">Danger</Button>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <Button size="sm">Small</Button>
-                <Button size="sm" disabled>
-                  Disabled
-                </Button>
-                <Button variant="secondary" size="sm">
-                  <Bell size={13} />
-                  Alert me
-                </Button>
-              </div>
-              <div className="border-line-soft flex flex-wrap items-center gap-2 border-t pt-4">
-                <Badge variant="volt">Best deal</Badge>
-                <Badge variant="amber">Rising</Badge>
-                <Badge variant="red">Sold out</Badge>
-                <Badge variant="neutral">est.</Badge>
-                <Badge variant="outline">NBA</Badge>
-              </div>
-            </CardBody>
-          </Card>
-
-          {/* Dense table */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Dense table</CardTitle>
-              <span className="label">40px rows</span>
-            </CardHeader>
-            <CardBody className="p-0">
-              <Table>
-                <TableHeader>
-                  <TableRow className="hover:bg-transparent">
-                    <TableHead>Provider</TableHead>
-                    <TableHead numeric>All-in</TableHead>
-                    <TableHead numeric>Listings</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="flex items-center gap-2">
-                      SeatGeek
-                      <Badge variant="volt">Best deal</Badge>
-                    </TableCell>
-                    <TableCell numeric>{formatCents(5800)}</TableCell>
-                    <TableCell numeric>1,204</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Ticketmaster</TableCell>
-                    <TableCell numeric>{formatCents(6420)}</TableCell>
-                    <TableCell numeric>864</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>StubHub</TableCell>
-                    <TableCell numeric className="text-text-dim">
-                      —
-                    </TableCell>
-                    <TableCell numeric className="text-text-dim">
-                      —
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </CardBody>
-          </Card>
-        </div>
       </section>
     </div>
   );

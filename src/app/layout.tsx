@@ -4,6 +4,7 @@ import { Archivo, Barlow_Condensed, JetBrains_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Ticker, type TickerItem } from "@/components/ticker";
+import { env } from "@/lib/env";
 
 import "./globals.css";
 
@@ -30,12 +31,20 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.BETTER_AUTH_URL),
   title: {
     default: "FanTicket Hub — NFL & NBA ticket price tracker",
     template: "%s · FanTicket Hub",
   },
   description:
     "Compare all-in ticket prices across marketplaces and get alerted the moment they drop. Not a ticket seller.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    siteName: "FanTicket Hub",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 /* Static ticker sample for Phase 0; becomes live data in Phase 2. */
